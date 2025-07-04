@@ -1,7 +1,7 @@
 import os
 import re
 import time
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import streamlit as st
 import PyPDF2
 import google.generativeai as genai
@@ -26,8 +26,8 @@ import speech_recognition as sr
 st.set_page_config(page_title="GrillMaster", layout="wide")
 
 # Load API key
-load_dotenv()
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+#load_dotenv()
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # Initialize session state
 for key, default in {
